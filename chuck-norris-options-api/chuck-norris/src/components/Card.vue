@@ -49,8 +49,9 @@ export default {
 </script>
 
 <style scoped>
-.card-img-right {
-  width: 180px;
-  height: 100%;
-}
+  .card-img-right {
+    width: 180px;
+    height: 100%;
+    object-fit: cover;
+  }
 </style>
