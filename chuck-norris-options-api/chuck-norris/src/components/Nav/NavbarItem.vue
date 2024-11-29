@@ -1,6 +1,8 @@
 <template>
   <li class="nav-item">
-    <RouterLink class="nav-link" :to="to">{{ label }}</RouterLink>
+    <RouterLink class="nav-link" :class="{ active: isActiveRoute }" :to="to">
+      {{ label }}
+    </RouterLink>
   </li>
 </template>
 
@@ -16,6 +18,27 @@ export default {
       required: true,
     },
   },
+  computed: {
+    isActiveRoute() {
+      return this.$route.path === this.to.path;
+    },
+  },
 };
 </script>
 
+<style scoped>
+/* Hover State */
+.nav-link:hover {
+  color: white;
+  border-radius: 5px;
+}
+
+.nav-link:focus {
+  color: white;
+}
+
+.nav-link.active {
+  color: white;
+  font-weight: bold;
+}
+</style>

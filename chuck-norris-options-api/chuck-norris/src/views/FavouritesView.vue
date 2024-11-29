@@ -1,5 +1,5 @@
 <template>
-  <Favourites />
+  <Favourites class="favourites-content"/>
 </template>
 
 <script>
@@ -8,3 +8,9 @@ export default {
   components: { Favourites },
 }
 </script>
+
+<style scoped>
+  .favourites-content {
+    margin-top: 4rem !important;
+  }
+</style>

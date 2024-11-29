@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="cardClasses" :style="cardStyles">
+  <div class="card" :class="cardClasses">
     <!-- Dynamic Body Content -->
     <div class="card-body" :class="bodyClasses">
       <slot name="body"></slot>
@@ -22,38 +22,35 @@ export default {
     cardClasses: {
       type: String,
       default: "",
+      required: true
     },
     bodyClasses: {
       type: String,
       default: "",
-    },
-    cardStyles: {
-      type: String,
-      default: "",
+      required: false
     },
     hasImage: {
       type: Boolean,
       default: false,
+      required: false
     },
     imageSrc: {
       type: String,
       default: "",
+      required: false
     },
     imageAlt: {
       type: String,
       default: "Card Image",
+      required: false
     },
   },
 };
 </script>
 
 <style scoped>
-.card {
-  width: 500px;
-}
 .card-img-right {
   width: 180px;
   height: 100%;
-  object-fit: contain;
 }
 </style>

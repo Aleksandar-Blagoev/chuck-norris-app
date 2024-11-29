@@ -16,7 +16,7 @@ export default {
   props: {
     selectedCategory: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   data() {
@@ -35,11 +35,11 @@ export default {
     async handleClick() {
 
       if (this.selectedCategory) {
-        // Fetch joke by selected category
         await this.jokeStore.addJokeByCategory(this.selectedCategory);
-      } else {
-        // Fetch random joke if no category is selected
+      } else if(this.selectedCategory === '') {
         await this.jokeStore.addRandomJoke();
+      } else {
+        this.$router.push({ path: "/error" });
       }
 
       localStorage.setItem("currentJoke", JSON.stringify(this.jokeStore.currentJoke));
@@ -51,5 +51,8 @@ export default {
 <style scoped>
   .get-joke {
     width: 100px;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
 </style>

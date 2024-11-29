@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-5">
     <div class="d-flex gap-3 fixed-width">
       <JokeDropdown v-model:category="selectedCategory"  />
       <JokeButton :selectedCategory="selectedCategory" />
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.fixed-width {
-  width: 400px;
-}
+  .fixed-width {
+    width: 500px;
+  }
 </style>

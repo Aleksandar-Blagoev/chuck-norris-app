@@ -11,10 +11,3 @@
     }
 }
 </script>
-
-<style scoped>
-.card-img-right {
-  width: 50%;
-  object-fit: cover;
-}
-</style>
