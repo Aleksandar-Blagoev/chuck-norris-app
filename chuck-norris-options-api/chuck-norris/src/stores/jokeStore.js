@@ -8,47 +8,33 @@ export const useJokeStore = defineStore('jokeStore', () => {
   // State
   const currentJoke = ref(null); // Holds the current joke
   const categories = ref([]); // Array to store categories
-  const loading = ref(false); // Loading state
   const favourites = ref([]); // Array to store favorite jokes
   const favouritesObjects = ref([]);
-  const error = ref(null); // Error state
 
   // Actions
   const loadCategories = async () => {
-    loading.value = true;
-    error.value = null;
     try {
       categories.value = await fetchJokeCategories();
     } catch (err) {
-      error.value = err.message || 'Failed to load categories';
-    } finally {
-      loading.value = false;
+      console.log("Error load categories ---", err);
     }
   };
 
   const addRandomJoke = async () => {
-    loading.value = true;
-    error.value = null;
     try {
       const joke = await fetchRandomJoke();
       currentJoke.value = joke;
     } catch (err) {
-      error.value = err.message || 'Failed to load a random joke';
-    } finally {
-      loading.value = false;
+      console.log("Add random joke error ---", err)
     }
   };
 
   const addJokeByCategory = async (category) => {
-    loading.value = true;
-    error.value = null;
     try {
       const joke = await fetchRandomJokeByCategory(category);
       currentJoke.value = joke;
     } catch (err) {
-      error.value = err.message || `Failed to load a joke from category: ${category}`;
-    } finally {
-      loading.value = false;
+      console.log("Add joke by category error ---", err);
     }
   };
 
@@ -102,9 +88,7 @@ export const useJokeStore = defineStore('jokeStore', () => {
   return {
     currentJoke,
     categories,
-    loading,
     favourites,
-    error,
     favouritesObjects,
     loadCategories,
     addRandomJoke,
