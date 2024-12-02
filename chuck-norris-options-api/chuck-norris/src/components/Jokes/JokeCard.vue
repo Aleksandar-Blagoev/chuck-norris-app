@@ -157,7 +157,7 @@ export default {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     font-weight: 500;
   }
 
@@ -170,7 +170,7 @@ export default {
     cursor: pointer;
   }
   .card {
-    margin-bottom: 1.5rem;
+    margin: 1.5rem;
   }
 
   .home-layout, .jokes-layout {

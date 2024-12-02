@@ -1,8 +1,8 @@
 <template>
   <div class="container mt-4">
     <div v-if="showAlert" class="alert alert-info text-center" role="alert">
-      You don't have Favourites !
-      <span class="countdown">{{countdown}}</span>
+      You don't have Favourites ! <br>
+      <span class="countdown">Redirected in {{countdown}}</span>
     </div>
 
     <div v-if="isLoading" class="loading-div">
@@ -40,7 +40,7 @@ export default {
       fetchChuck: useFetchChuckNorrisApi(),
       isLoading: false,
       showAlert: false,
-      countdown: 3,
+      countdown: 5,
     }
   },
   beforeMount() {
