@@ -1,0 +1,50 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+}
+
+.loading-spinner {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    margin-bottom: 1rem;
+    animation: rotate 2s linear infinite;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.alert {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: 80%;
+    max-width: 500px;
+}
+
+.countdown {
+    margin-left: 1rem;
+    color: black;
+    font-weight: bold;
+
+}

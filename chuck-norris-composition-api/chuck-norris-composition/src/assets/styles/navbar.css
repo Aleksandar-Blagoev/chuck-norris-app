@@ -1,0 +1,13 @@
+#navbarNav {
+    justify-content: center;
+}
+.avatar-icon {
+    font-size: 2rem;
+    color: #ffffff;
+}
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}

@@ -1,0 +1,21 @@
+export const IMG_URL = [
+  "https://media0.giphy.com/media/nCmkKgX7mHpRK5Vx79/200w.gif?cid=6c09b952pq2zd3a1tidtldifn9gvy2ayxzmfcyueia2mpc7i&ep=v1_gifs_search&rid=200w.gif&ct=g",
+  "https://media.tenor.com/lZnApsEQDm8AAAAM/well-well-see-cordell-walker.gif",
+  "https://i.gifer.com/FP9.gif",
+  "https://media.tenor.com/d_QpoFfLIlQAAAAM/smiling-cordell-walker.gif",
+  "https://i.makeagif.com/media/10-22-2018/jVULyV.gif",
+  "https://i.pinimg.com/originals/ff/87/5d/ff875da6b44466d22696d8de6ac26c52.gif",
+  "https://media.tenor.com/uTISeWIb0-gAAAAM/thats-right-cordell-walker.gif",
+  "https://media3.giphy.com/media/BNN7hT9LxNObhrdBnh/200w.gif?cid=6c09b952t7w7u392fxm2yj90t9oobddwax2l9ozh4ndfhz9g&ep=v1_gifs_search&rid=200w.gif&ct=g",
+  "https://media0.giphy.com/media/wWgUfuV4cnuVinjxd4/200w.gif?cid=6c09b952oakwg9o7vtpj3qmqx7gj0ub1de82q20xqs99kz4o&ep=v1_gifs_search&rid=200w.gif&ct=g",
+  "https://media4.giphy.com/media/cN1OI8aqdULmw6uxOb/200w.gif?cid=6c09b9524jnhqq38is44loz9k9yjhz8gpenym4h3k6i6wmnb&ep=v1_gifs_search&rid=200w.gif&ct=g",
+  "https://media3.giphy.com/media/dDGJ0ld7b1iPoT5jTW/200w.gif?cid=82a1493bt2czdpii4u67ipww1kr2tgjimqgnbiouc500os5j&ep=v1_gifs_related&rid=200w.gif&ct=g",
+  "https://media0.giphy.com/media/Pdv8yfi49DJcSf7BAU/200w.gif?cid=82a1493bcblrg3t6kchjeo6alzeqspcxf7tv2tk1ichhizpt&ep=v1_gifs_related&rid=200w.gif&ct=g",
+  "https://i.gifer.com/embedded/download/2Xv.gif",
+  "https://gifdb.com/images/thumbnail/texas-ranger-chuck-norris-thumbs-up-cowboy-hat-b0oty7xcnafw69p7.gif",
+  "https://media2.giphy.com/media/UqdBjoaJknDfPxbEvx/200w.gif?cid=82a1493bcpfx3ctxfs1ibaxkw580ounkpg15bmgcnmurb09p&ep=v1_gifs_related&rid=200w.gif&ct=g",
+  "https://media0.giphy.com/media/rplBYQtQebO5ARHyHU/200w.gif?cid=6c09b952sauzdoxwb1troat5ic324c94y9xqhlrmsrb303r2&ep=v1_gifs_search&rid=200w.gif&ct=g",
+  "https://media.tenor.com/0JmJprrppM8AAAAM/smiling-cordell-walker.gif",
+  "https://i.gifer.com/FPW.gif",
+  "https://media.tenor.com/zLWrkFQbpFUAAAAM/chuck-norris-fight.gif"
+]

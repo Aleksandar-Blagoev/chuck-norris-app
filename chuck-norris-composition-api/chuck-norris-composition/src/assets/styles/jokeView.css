@@ -1,0 +1,22 @@
+.joke {
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .joke {
+        padding: 1rem;
+        margin: 5rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .joke {
+        max-width: 800px; /* Wider container for larger screens */
+    }
+}
