@@ -9,7 +9,7 @@
 
 <script setup>
 import { useJokeStore } from '@/stores/jokeStore.js';
-import { computed, onBeforeMount, ref, watch, defineEmits } from 'vue';
+import {computed, onBeforeMount, ref, watch, defineEmits, onMounted} from 'vue';
 
   const emit = defineEmits(['update:category']);
 
@@ -20,6 +20,13 @@ import { computed, onBeforeMount, ref, watch, defineEmits } from 'vue';
   onBeforeMount(() => {
     jokeStore.loadCategories();
   });
+
+  onMounted(() => {
+    const savedOption = JSON.parse(localStorage.getItem("selectedOption"));
+    if (savedOption) {
+      selectedCategory.value = savedOption;
+    }
+  })
 
   const saveToLocalStorage = () => {
     localStorage.setItem("selectedOption", JSON.stringify(selectedCategory.value));

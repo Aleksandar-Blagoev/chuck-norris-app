@@ -20,7 +20,7 @@ import { useRoute } from 'vue-router';
   const props = defineProps({
     selectedCategory: {
       type: String,
-      required: true,
+      required: false,
     },
   });
 

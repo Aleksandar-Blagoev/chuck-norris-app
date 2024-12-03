@@ -5,6 +5,12 @@
 
 .nav-link:focus {
     color: white;
+    font-weight: bold;
+}
+
+.nav-link:visited {
+    color: white;
+    font-weight: bold;
 }
 
 .nav-link.active {
