@@ -17,6 +17,6 @@
 
 @media (min-width: 1024px) {
     .joke {
-        max-width: 800px; /* Wider container for larger screens */
+        max-width: 800px;
     }
 }

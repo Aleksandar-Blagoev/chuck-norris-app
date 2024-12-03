@@ -40,7 +40,7 @@
 import { computed, defineProps } from "vue";
 import { useJokeStore } from "@/stores/jokeStore.js";
 import { useRoute } from "vue-router";
-import { IMG_URL } from "@/const/chuckNorrisConst.js";
+import { IMG_URL } from "@/const/chuckNorrisConstants.js";
 import Card from "@/components/Card.vue";
 import JokeButton from "@/components/Jokes/JokeButton.vue";
 
