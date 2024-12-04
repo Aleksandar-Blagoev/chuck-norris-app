@@ -1,6 +1,6 @@
 <template>
   <select class="form-select" aria-label="Default select example" v-model="selectedCategory" @change="saveToLocalStorage">
-    <option disabled value="">Open this select menu</option>
+    <option value="">Open this select menu</option>
     <option v-for="category in categories" :key="category" :value="category">
       {{ category }}
     </option>
