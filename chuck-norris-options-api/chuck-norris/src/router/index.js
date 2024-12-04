@@ -22,10 +22,10 @@ const router = createRouter({
       component: FavouritesView,
     },
     {
-      path:'/error',
+      path: '/error',
       name: 'error',
       component: ErrorView,
-    }
+    },
   ],
 })
 
@@ -33,7 +33,7 @@ router.beforeEach((to, from, next) => {
   const validRoutes = ['home', 'jokes', 'favourites', 'error'];
 
   if (!validRoutes.includes(to.name)) {
-    return next('/');
+    return next('/error');
   }
 
   next();

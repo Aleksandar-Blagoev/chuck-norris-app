@@ -27,7 +27,6 @@ export default {
 </script>
 
 <style scoped>
-/* Hover State */
 .nav-link:hover {
   color: white;
   border-radius: 5px;

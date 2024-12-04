@@ -54,4 +54,10 @@ export default {
     height: 100%;
     object-fit: cover;
   }
+
+  .card-body {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
 </style>

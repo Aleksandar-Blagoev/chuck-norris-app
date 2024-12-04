@@ -3,7 +3,7 @@
     <div class="error-container">
       <h1 class="error-title">404</h1>
       <p class="error-message">Oops! Something went wrong.</p>
-      <RouterLink to="/" class="error-button">Go Back Home</RouterLink>
+      <RouterLink :to="{path: '/'}" class="error-button">Go Back Home</RouterLink>
     </div>
   </div>
 </template>
