@@ -17,6 +17,9 @@
 
     <Card v-else cardClasses="mt-3 flex-row jokes-layout shadow-lg">
       <template #body>
+        <h4 v-if="isFavourite && joke?.categories[0] !== undefined" class="mb-4 fw-bold">
+          Category: {{ joke.categories[0] }}
+        </h4>
         <p class="mb-0 me-3 joke-text">
           {{ displayedJokeText }}
         </p>
@@ -39,7 +42,7 @@
 <script setup>
 import { computed, defineProps } from "vue";
 import { useJokeStore } from "@/stores/jokeStore.js";
-import { useRoute } from "vue-router";
+import isHomePage from "@/utilities/isInHome.js";
 import { IMG_URL } from "@/const/chuckNorrisConstants.js";
 import Card from "@/components/Card.vue";
 import JokeButton from "@/components/Jokes/JokeButton.vue";
@@ -52,7 +55,6 @@ import JokeButton from "@/components/Jokes/JokeButton.vue";
   });
 
   const jokeStore = useJokeStore();
-  const route = useRoute();
   const imgArray = IMG_URL;
 
   const displayedJokeText = computed(() => {
@@ -102,10 +104,7 @@ import JokeButton from "@/components/Jokes/JokeButton.vue";
     }
   });
 
-  const isInHome = computed(() => {
-    const endPath = route.path.split("/").pop().toLowerCase();
-    return endPath !== "jokes" && endPath !== "favourites";
-  });
+  const isInHome = computed(isHomePage);
 
   const toggleFavourite = () => {
     const jokeToToggle =

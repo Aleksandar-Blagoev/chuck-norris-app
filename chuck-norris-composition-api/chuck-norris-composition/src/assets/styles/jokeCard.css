@@ -34,12 +34,7 @@
     font-weight: 500;
 }
 
-.toggle-icon {
-    transition: transform 0.2s ease;
-}
-
 .toggle-icon:hover {
-    transform: scale(1.2);
     cursor: pointer;
 }
 

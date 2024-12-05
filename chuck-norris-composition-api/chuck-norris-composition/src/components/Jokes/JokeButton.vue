@@ -15,7 +15,8 @@
 <script setup>
 import { computed } from "vue";
 import { useJokeStore } from '@/stores/jokeStore.js';
-import { useRoute } from 'vue-router';
+import isHomePage from "@/utilities/isInHome.js";
+import saveToLocal from "@/utilities/saveToLocal.js";
 
   const props = defineProps({
     selectedCategory: {
@@ -25,12 +26,8 @@ import { useRoute } from 'vue-router';
   });
 
   const jokeStore = useJokeStore();
-  const route = useRoute();
 
-  const isInHome = computed(() => {
-    const endPath = route.path.split('/').pop().toLowerCase();
-    return endPath === '' || endPath === 'home';
-  });
+  const isInHome = computed(isHomePage);
 
   const handleClick = async () => {
     try {
@@ -41,10 +38,10 @@ import { useRoute } from 'vue-router';
       }
       console.log('Fetched Joke:', jokeStore.currentJoke);
     } catch (error) {
-      console.error('Error fetching joke:', error);
+      console.log('Error fetching joke:', error);
     }
 
-    localStorage.setItem("currentJoke", JSON.stringify(jokeStore.currentJoke));
+    saveToLocal("currentJoke", jokeStore.currentJoke);
   };
 
 </script>

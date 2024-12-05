@@ -6,9 +6,9 @@ export const useJokeStore = defineStore('jokeStore', () => {
   const { fetchRandomJoke, fetchRandomJokeByCategory, fetchJokeCategories } = useFetchChuckNorrisApi();
 
   // State
-  const currentJoke = ref(null); // Holds the current joke
-  const categories = ref([]); // Array to store categories
-  const favourites = ref([]); // Array to store favorite jokes
+  const currentJoke = ref(null);
+  const categories = ref([]);
+  const favourites = ref([]);
   const favouritesObjects = ref([]);
 
   // Actions

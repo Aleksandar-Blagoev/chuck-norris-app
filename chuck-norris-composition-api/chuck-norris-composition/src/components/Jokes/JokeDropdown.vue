@@ -1,5 +1,5 @@
 <template>
-  <select class="form-select" aria-label="Default select example" v-model="selectedCategory" @change="saveToLocalStorage">
+  <select class="form-select" aria-label="Default select example" v-model="selectedCategory" @change="saveToLocal('selectedOption', selectedCategory)">
     <option value="">Open this select menu</option>
     <option v-for="category in categories" :key="category" :value="category">
       {{ category }}
@@ -10,6 +10,7 @@
 <script setup>
 import { useJokeStore } from '@/stores/jokeStore.js';
 import {computed, onBeforeMount, ref, watch, defineEmits, onMounted} from 'vue';
+import saveToLocal from "@/utilities/saveToLocal.js";
 
   const emit = defineEmits(['update:category']);
 
@@ -27,10 +28,6 @@ import {computed, onBeforeMount, ref, watch, defineEmits, onMounted} from 'vue';
       selectedCategory.value = savedOption;
     }
   })
-
-  const saveToLocalStorage = () => {
-    localStorage.setItem("selectedOption", JSON.stringify(selectedCategory.value));
-  }
 
   watch(selectedCategory, (newCategory) => {
     emit('update:category', newCategory);
