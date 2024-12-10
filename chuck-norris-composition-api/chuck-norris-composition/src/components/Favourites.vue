@@ -17,8 +17,16 @@
     </div>
 
     <div v-else class="row">
-      <div class="col-lg-6" v-for="joke in jokeStoreFavourites" :key="joke.id">
-        <JokeCard :joke="joke" />
+      <div
+        class="col-lg-6 .card-animation"
+        v-for="(joke,index) in jokeStoreFavourites"
+        :key="index"
+      >
+        <JokeCard
+          class="card-animation"
+          :style="{ animationDelay: `${index * 0.2}s` }"
+          :joke="joke"
+        />
       </div>
     </div>
   </div>

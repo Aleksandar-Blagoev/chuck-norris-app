@@ -15,13 +15,13 @@
       </template>
     </Card>
 
-    <Card v-else cardClasses="mt-3 flex-row jokes-layout shadow-lg">
+    <Card v-else cardClasses="mt-3 flex-row jokes-layout shadow-lg" :key="joke?.id">
       <template #body>
         <h4 v-if="isFavourite && joke?.categories[0] !== undefined" class="mb-4 fw-bold">
           Category: {{ joke.categories[0] }}
         </h4>
         <p class="mb-0 me-3 joke-text">
-          {{ displayedJokeText }}
+          {{ displayedJokeText,  joke?.id }}
         </p>
       </template>
       <template #icon v-if="isLorem">
@@ -76,11 +76,7 @@ import JokeButton from "@/components/Jokes/JokeButton.vue";
 
   const currentJokeImage = computed(() => {
     const randomIndex = Math.floor(Math.random() * imgArray.length);
-    return (
-      !jokeStore.currentJoke?.icon_url
-        ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9mKMu0_7_YyHSQPtHhqeQvT_AEEO4E9eiWg&s"
-        : imgArray[randomIndex]
-    );
+    return imgArray[randomIndex];
   });
 
   const isFavourite = computed(() => {

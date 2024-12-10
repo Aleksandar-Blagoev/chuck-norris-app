@@ -96,4 +96,12 @@ export const useJokeStore = defineStore('jokeStore', () => {
     addToFavourites,
     removeFromFavourites,
   };
-});
+}
+  // {
+  //   persist: {
+  //     key: 'jokeStore',
+  //     storage: localStorage,
+  //     paths: ['currentJoke', 'favourites']
+  //   },
+);
+
