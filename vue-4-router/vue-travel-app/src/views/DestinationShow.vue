@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="destination">
+    <div v-if="isNewDestination">
       <section>
         <div>
           <h1>{{ destination.name }}</h1>
@@ -15,13 +15,13 @@
       <section class="experiences">
         <h2>Top Expriences in {{ destination.name }}</h2>
         <div class="cards">
-          <router-link
+          <AppLink
             v-for="experience in destination.experiences"
             :key="experience.slug"
             :to="{ name: 'experience.show', params: { experienceSlug: experience.slug } }"
           >
             <ExperienceCard :experience="experience" />
-          </router-link>
+          </AppLink>
         </div>
         <router-view />
       </section>
@@ -33,12 +33,29 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import GoBack from '@/components/GoBack.vue'
-import {useDestination} from '@/composables/useDestination'
+import { useDestination } from '@/composables/useDestination'
+import AppLink from '@/components/AppLink.vue'
+import { ref, watch } from 'vue'
 
-const {destination, fetchCountryData} = useDestination()
+const { destination, fetchCountryData } = useDestination()
+console.log('Route ----dasdsaasda-')
 
-fetchCountryData()
+const isNewDestination = ref(false)
+
+watch(
+  destination,
+  (newDestination, oldDestination) => {
+    if (newDestination && newDestination !== oldDestination) {
+      isNewDestination.value = true
+    } else {
+      isNewDestination.value = false
+    }
+  },
+  { deep: true }
+)
+
+fetchCountryData();
 </script>
+
